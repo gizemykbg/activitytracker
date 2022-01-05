@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, Image} from 'react-native';
 
 import styles from './Entrance.styles';
-// import { Button } from '../../components'
+import {Button} from '../../components';
 
 const Entrance = ({navigation}) => {
   return (

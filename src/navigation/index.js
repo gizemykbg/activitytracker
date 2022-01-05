@@ -1,20 +1,12 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {AuthProvider} from '../providers/AuthProvider';
+import Routes from './routes';
 
-import AuthStackNavigation from './AuthStackNavigation';
-
-const Stack = createNativeStackNavigator();
-
-const index = () => {
+const Providers = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main" headerMode="none">
-        <Stack.Screen name="Auth" component={AuthStackNavigation} />
-        <Stack.Screen />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
   );
 };
-
-export default index;
+export default Providers;
