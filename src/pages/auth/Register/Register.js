@@ -2,9 +2,9 @@ import React, {useContext, useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 
 import styles from './Register.styles';
-import {Input} from '../../../components';
-import {Button} from '../../../components';
-import {AuthContext} from '../../../providers/AuthProvider';
+import {Input, Button} from '../../../components';
+
+import {AuthContext} from '../../../navigation/providers/AuthProvider';
 
 const Register = ({navigation}) => {
   const [email, setEmail] = useState();

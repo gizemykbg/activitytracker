@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Image} from 'react-native';
 
 import styles from './Entrance.styles';
-import {Button} from '../../components';
+import {Button} from '../../../components';
 
 const Entrance = ({navigation}) => {
   return (
@@ -10,7 +10,7 @@ const Entrance = ({navigation}) => {
       <View style={styles.main}>
         <View style={styles.imageMain}>
           <Image
-            source={require('../../assets/welcome.png')}
+            source={require('../../../assets/welcome.png')}
             style={styles.img}
             resizeMode="contain"
           />

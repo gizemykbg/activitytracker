@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react';
 import {Text, TouchableOpacity, Image, ScrollView} from 'react-native';
-import {AuthContext} from '../../../providers/AuthProvider';
+import {AuthContext} from '../../../navigation/providers/AuthProvider';
 import {Button, Input} from '../../../components';
 import styles from './Login.styles';
 
@@ -41,7 +41,7 @@ const Login = ({navigation}) => {
       />
       <TouchableOpacity
         style={styles.forgotButton}
-        onPress={() => navigation.navigate('Signup')}>
+        onPress={() => navigation.navigate('Register')}>
         <Text style={styles.navButtonText}>
           Don't have an acount? Create here
         </Text>

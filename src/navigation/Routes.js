@@ -2,9 +2,10 @@ import React, {useContext, useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import auth from '@react-native-firebase/auth';
-import {AuthContext} from '../providers/AuthProvider';
+import {AuthContext} from './providers/AuthProvider';
 
 import AuthStackNavigation from './AuthStackNavigation';
+import MainStackNavigation from './MainStackNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +33,7 @@ const Routes = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Main" headerMode="none">
         {user ? (
-          <Stack.Screen />
+          <Stack.Screen name="Main" component={MainStackNavigation} />
         ) : (
           <Stack.Screen name="Auth" component={AuthStackNavigation} />
         )}

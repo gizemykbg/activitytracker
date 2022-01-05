@@ -21,7 +21,7 @@ export default StyleSheet.create({
   navButtonText: {
     fontSize: 18,
     fontWeight: '500',
-    color: colors.blue,
+    color: colors.lilac,
     fontFamily: 'Lato-Regular',
   },
   textPrivate: {

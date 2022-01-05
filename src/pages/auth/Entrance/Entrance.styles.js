@@ -7,27 +7,22 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
   },
   main: {
-    flex: 1,
-    marginHorizontal: 23,
+    flex: 3,
+    marginHorizontal: 18,
     justifyContent: 'center',
   },
-  imgMain: {
-    flex: 3,
-  },
+  imgMain: {},
   img: {
     width: '100%',
-    height: '100%',
+    height: '60%',
   },
   text: {
-    flex: 1,
     textAlign: 'center',
     fontSize: 24,
-    fontWeight: '700',
+    fontWeight: '600',
     color: colors.dark,
   },
-  buttonMain: {
-    flex: 2,
-  },
+  buttonMain: {},
   buttonStyle: {
     backgroundColor: colors.lightLilac,
     tintColor: colors.lilac,
