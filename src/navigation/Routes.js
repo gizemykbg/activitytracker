@@ -6,6 +6,7 @@ import {AuthContext} from './providers/AuthProvider';
 
 import AuthStackNavigation from './AuthStackNavigation';
 import MainStackNavigation from './MainStackNavigation';
+import BottomTabNavigation from './BottomTabNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,7 +34,14 @@ const Routes = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Main" headerMode="none">
         {user ? (
-          <Stack.Screen name="Main" component={MainStackNavigation} />
+          ((<Stack.Screen name="Main" component={MainStackNavigation} />),
+          (
+            <Stack.Screen
+              name="Tabs"
+              component={BottomTabNavigation}
+              options={{headerShown: false}}
+            />
+          ))
         ) : (
           <Stack.Screen name="Auth" component={AuthStackNavigation} />
         )}
