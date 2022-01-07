@@ -1,6 +1,8 @@
 import React, {useContext} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {Header} from 'react-native-elements';
+
+import ActivityMap from '../../components/ActivityMap';
 import Logout from '../../components/Logout';
 
 import WeatherBox from '../../components/WeatherBox';
@@ -10,10 +12,10 @@ import {colors} from '../../styles';
 import styles from './Home.styles';
 
 const Home = ({navigation, route}) => {
-  // const {forecast} = useWeather();
+  //  const {forecast} = useWeather();
 
   return (
-    <View>
+    <View style={styles.container}>
       <Header
         backgroundColor={colors.lilac}
         leftComponent={{text: 'logo'}}
@@ -24,8 +26,10 @@ const Home = ({navigation, route}) => {
           </View>
         }
       />
-      <Text>Hello</Text>
-      {/*<WeatherBox /> location={forecast.name}  item={forecast} */}
+
+      <ActivityMap />
+
+      {/* <WeatherBox /> location={forecast.name} item={forecast} */}
     </View>
   );
 };

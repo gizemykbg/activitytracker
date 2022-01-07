@@ -4,54 +4,56 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // Screens
 import Home from '../pages/Home';
+import UserList from '../pages/UserList';
+
 import {colors} from '../styles';
+import AddModal from '../components/AddModal';
+
 const Tab = createBottomTabNavigator();
+
+const MyModalBackgroundScreen = () => {
+  return null;
+};
 
 export default function BottomTabNavigation() {
   return (
     <Tab.Navigator
+      style={styles.tabbar}
       screenOptions={{
         tabBarActiveTintColor: colors.orange,
-        tabBarInactiveTintColor: colors.lilac,
-        tabBarStyle: {
-          height: 70,
-          position: 'absolute',
-          backgroundColor: colors.light,
-        },
-      }}
-      //  screenOptions={({ route }) => ({
-      //     tabBarIcon: ({ isFocus }) => {
-      //         const iconName;
-      //         const color = isFocus ? colors.orange : colors.purple;
-      //         if (route.name === 'Home') {
-      //             iconName = isFocus ? "home" :"home";
-      //         } else if (route.name === 'Add') {
-      //             iconName = isFocus ? "plus" : "plus";
-      //         } else if (route.name === 'List') {
-      //             iconName = isFocus ? "list" : "list";
-      //         }
-      //         return (
-      //                 <Icon name={ iconName } style={styles.icon}/>
-      //         )
-      //     },
-      // })}
-    >
+      }}>
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
           headerShown: false,
           tabBarIcon: ({color, size}) => (
-            <Icon name="home" size={30} color={colors.orange} />
+            <Icon name="home" size={30} style={styles.icon} />
           ),
         }}
       />
-      {/* <Tab.Screen /> add activity options={{
-                    tabBarIcon: (props) => (
-                        <Icon name="plus" style={styles.icon}/>
-                      ),
-                }} */}
-      {/* <Tab.Screen /> user list */}
+      <Tab.Screen
+        name="Modal"
+        component={MyModalBackgroundScreen}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="plus" size={30} style={styles.icon} />
+          ),
+          tabBarButton: () => {
+            return <AddModal />;
+          },
+        }}
+      />
+      <Tab.Screen
+        name="userlist"
+        component={UserList}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="bookmark" size={30} style={styles.icon} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -59,8 +61,8 @@ export default function BottomTabNavigation() {
 export const styles = StyleSheet.create({
   tabbar: {
     width: 45,
-    height: 45,
-    borderRadius: 15,
+    height: 55,
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     shadowOffset: {
@@ -72,7 +74,7 @@ export const styles = StyleSheet.create({
     elevation: 14,
   },
   icon: {
-    color: colors.purple,
+    color: colors.lilac,
     fontSize: 32,
     shadowOffset: {
       width: 1,
@@ -83,6 +85,6 @@ export const styles = StyleSheet.create({
     elevation: 5,
   },
   headerStyle: {
-    height: 150,
+    height: 120,
   },
 });

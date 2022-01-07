@@ -3,9 +3,9 @@ import axios from 'axios';
 import Geolocation from 'react-native-geolocation-service';
 
 const useWeather = () => {
-  const [longitude, setLongitude] = useState(27);
-  const [latitude, setLatitude] = useState(52);
-  const [forecast, setForecast] = useState(null);
+  const [longitude, setLongitude] = useState(0);
+  const [latitude, setLatitude] = useState(0);
+  const [forecast, setForecast] = useState([]);
   const [error, setError] = useState(null);
 
   const getWeather = async () => {

@@ -20,4 +20,5 @@ export default StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
   },
+  container: {flex: 1},
 });

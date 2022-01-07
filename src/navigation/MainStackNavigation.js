@@ -1,18 +1,22 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-//Screen
-import Home from '../pages/Home';
-import Logout from '../components/Logout';
+import BottomTabNavigation from './BottomTabNavigation';
+import AddTopTabNavigation from './AddTopTabNavigation';
 
 const Stack = createNativeStackNavigator();
 
-export default function AuthStackNavigation() {
+export default function MainStackNavigation() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home"
-        component={Home}
+        name="Tabs"
+        component={BottomTabNavigation}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Activities"
+        component={AddTopTabNavigation}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
