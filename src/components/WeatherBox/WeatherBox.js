@@ -4,34 +4,36 @@ import {Icon} from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from './WeatherBox.styles';
 
 const WeatherBox = ({item, location}) => {
-  let time;
-  var date = new Date(item.detail.dt * 1000);
-  var hours = date.getHours();
-  var minutes = '0' + date.getMinutes();
-  time = hours + ':' + minutes.substring(-2);
+  let time = 0;
+  // var date = new Date(item.dt * 1000);
+  // var hours = date.getHours();
+  // var minutes = '0' + date.getMinutes();
+  // time = hours + ':' + minutes.substring(-2);
   return (
     <View style={styles.card}>
-      <Text style={styles.notes}>{location}</Text>
+      <Text>Hellooo</Text>
+      {/* <Text style={styles.notes}>{location}</Text> */}
       <View style={styles.inner_container}>
-        <Image
+        {/* <Image
           style={styles.image}
           source={{
             uri:
               'https://openweathermap.org/img/w/' +
-              item.detail.weather[0].icon +
+              item.weather[0].icon +
               '.png',
           }}
-        />
+        /> */}
         <Text style={styles.time}>{time}</Text>
       </View>
-      <View tyle={styles.info}>
-        <Text style={styles.notes}>{item.detail.weather[0].description}</Text>
+      {/* <View tyle={styles.info}>
+        <Text style={styles.notes}>{item.weather[0].description}</Text>
         <Text style={styles.notes}>
-          {Math.round(item.detail.main.temp * 10) / 10}&#8451;
+          {Math.round(item.main.temp * 10) / 10};
         </Text>
-      </View>
+      </View> */}
     </View>
   );
 };
 
 export default WeatherBox;
+//detail ??

@@ -2,15 +2,22 @@ import {StyleSheet} from 'react-native';
 import {colors} from '../../styles';
 
 export default StyleSheet.create({
-  userBtn: {
-    borderColor: colors.blue,
-    borderWidth: 2,
-    borderRadius: 3,
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    marginHorizontal: 5,
+  header: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.lilac,
+    marginBottom: 15,
+    width: '100%',
+    paddingVertical: 12,
   },
-  userBtnTxt: {
-    color: colors.blue,
+  headerRight: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: 4,
+  },
+  heading: {
+    color: 'white',
+    fontSize: 30,
+    fontWeight: 'bold',
   },
 });

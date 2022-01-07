@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // Screens
@@ -10,7 +10,15 @@ const Tab = createBottomTabNavigator();
 export default function BottomTabNavigation() {
   return (
     <Tab.Navigator
-      headerMode="none"
+      screenOptions={{
+        tabBarActiveTintColor: colors.orange,
+        tabBarInactiveTintColor: colors.lilac,
+        tabBarStyle: {
+          height: 70,
+          position: 'absolute',
+          backgroundColor: colors.light,
+        },
+      }}
       //  screenOptions={({ route }) => ({
       //     tabBarIcon: ({ isFocus }) => {
       //         const iconName;
@@ -28,7 +36,16 @@ export default function BottomTabNavigation() {
       //     },
       // })}
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="home" size={30} color={colors.orange} />
+          ),
+        }}
+      />
       {/* <Tab.Screen /> add activity options={{
                     tabBarIcon: (props) => (
                         <Icon name="plus" style={styles.icon}/>
@@ -64,5 +81,8 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+  },
+  headerStyle: {
+    height: 150,
   },
 });
