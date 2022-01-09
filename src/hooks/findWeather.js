@@ -37,25 +37,30 @@ const findWeather = () => {
     );
     return position;
   };
-  useEffect(() => {
-    getLocation();
-  }, []);
 
   const getWeather = async () => {
+    console.log(position, 'position');
     const URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=d6d826b6374ec0b43595ba43122aab9e`;
+    console.log(URL);
     try {
       const response = await axios.get(URL);
       setForecast(response.data);
-      console.log(forecast);
+      console.log(response.data);
     } catch (err) {
       console.log(err);
       setError(err);
     }
+    return forecast;
   };
   useEffect(() => {
-    getWeather();
+    async function getData() {
+      await getLocation();
+      await getWeather();
+      console.log('safdg');
+    }
+    getData();
   }, []);
-  return forecast;
+  // useEffect(() => {}, [forecast]);
 };
 
 export default findWeather;

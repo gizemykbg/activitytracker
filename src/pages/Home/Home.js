@@ -11,8 +11,7 @@ import {colors} from '../../styles';
 import styles from './Home.styles';
 
 const Home = ({navigation, route}) => {
-  // const {forecast} = findWeather();
-  // console.log(forecast);
+  const forecast = findWeather();
   return (
     <View style={styles.container}>
       <Header
