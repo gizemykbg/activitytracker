@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // Screens
@@ -8,6 +8,8 @@ import UserList from '../pages/UserList';
 
 import {colors} from '../styles';
 import AddModal from '../components/AddModal';
+
+import ActivityStackNavigation from './ActivityStackNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -29,6 +31,16 @@ export default function BottomTabNavigation() {
           headerShown: false,
           tabBarIcon: ({color, size}) => (
             <Icon name="home" size={30} style={styles.icon} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Activities"
+        component={ActivityStackNavigation}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="run" size={30} style={styles.icon} />
           ),
         }}
       />

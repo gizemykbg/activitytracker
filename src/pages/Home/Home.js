@@ -2,18 +2,17 @@ import React, {useContext} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {Header} from 'react-native-elements';
 
-import ActivityMap from '../../components/ActivityMap';
+import Map from '../../components/Map';
 import Logout from '../../components/Logout';
 
+import findWeather from '../../hooks/findWeather';
 import WeatherBox from '../../components/WeatherBox';
-import useWeather from '../../hooks/useWeather';
-import {AuthContext} from '../../navigation/providers/AuthProvider';
 import {colors} from '../../styles';
 import styles from './Home.styles';
 
 const Home = ({navigation, route}) => {
-  //  const {forecast} = useWeather();
-
+  // const {forecast} = findWeather();
+  // console.log(forecast);
   return (
     <View style={styles.container}>
       <Header
@@ -26,10 +25,8 @@ const Home = ({navigation, route}) => {
           </View>
         }
       />
-
-      <ActivityMap />
-
-      {/* <WeatherBox /> location={forecast.name} item={forecast} */}
+      <Map />
+      {/* <WeatherBox item={forecast} /> */}
     </View>
   );
 };

@@ -6,8 +6,8 @@ import {
   FlatList,
   TouchableWithoutFeedback,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/core';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {useNavigation} from '@react-navigation/native';
 import Modal from 'react-native-modal';
 
 import {colors} from '../../styles';
@@ -41,6 +41,7 @@ const AddModal = () => {
         key={item.id}
         style={styles.items}
         onPress={() => {
+          setSelectedId(item.id);
           setModalVisible(false);
           navigation.navigate('Activities', {screen: item.navigationName}); //
         }}>

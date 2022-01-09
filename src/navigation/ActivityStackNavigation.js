@@ -1,22 +1,23 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import BottomTabNavigation from './BottomTabNavigation';
-import AddTopTabNavigation from './AddTopTabNavigation';
+//Screen
+import History from '../pages/addActivity/History';
+import Activity from '../pages/addActivity/Activity';
 
 const Stack = createNativeStackNavigator();
 
-export default function MainStackNavigation() {
+export default function ActivityStackNavigation() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Tabs"
-        component={BottomTabNavigation}
+        name="Activity"
+        component={Activity}
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Activities"
-        component={AddTopTabNavigation}
+        name="History"
+        component={History}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

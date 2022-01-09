@@ -5,9 +5,10 @@ export default StyleSheet.create({
   container: {
     justifyContent: 'flex-end',
     alignItems: 'center',
+    flex: 1,
   },
   map: {
-    height: dimensionsHeight / 2,
+    height: 480,
     ...StyleSheet.absoluteFillObject,
   },
 });
