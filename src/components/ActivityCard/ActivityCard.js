@@ -1,11 +1,15 @@
-import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import React, {useRef, useState} from 'react';
+import {View, Text, Platform} from 'react-native';
 import {Avatar, Button} from 'react-native-elements';
 import {Icon} from 'react-native-vector-icons/MaterialCommunityIcons';
+import GeoLocation from 'react-native-geolocation-service';
 import styles from './ActivityCard.styles';
+import {hasPermission} from '../../hooks/locationPermission';
 
 const ActivityCard = ({item}) => {
+  const watchId = useRef(null);
   const [active, setActive] = useState(false);
+
   function handleClick() {
     setActive(!active);
     console.log('hello');

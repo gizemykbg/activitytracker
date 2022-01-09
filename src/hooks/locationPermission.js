@@ -1,7 +1,7 @@
 import {PermissionsAndroid} from 'react-native';
 import {Platform, ToastAndroid} from 'react-native';
 
-export const hasPermission = async () => {
+export const locationPermission = async () => {
   if (Platform.OS === 'android' && Platform.Version < 23) {
     return true;
   }

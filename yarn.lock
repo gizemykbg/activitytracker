@@ -1230,10 +1230,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-14.2.1.tgz#8121f94d4b4bcd1947ba9adeaef1807bfc8b3d4d"
   integrity sha512-ULHPFw+lvjZQsKKFPeeuuyZ+Khhu5hu/W3xnbbtFQ1W7C0oj+BeEC6kvhck14SWm7Hzt8zapcqngqfC7GRyOwg==
 
-"@react-native-firebase/firestore@^14.2.1":
-  version "14.2.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-14.2.1.tgz#a993a838689aab7f7d339da9c033d6c6a6ad312a"
-  integrity sha512-7yzKShT6uFbzXNevN57xWFSYA6nNTvmfDlf+K8cEWjTVTP9deqMT635iNt48um0jTTmT6Dc7mDtdVcb+kla/WA==
+"@react-native-firebase/database@^14.2.2":
+  version "14.2.2"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/database/-/database-14.2.2.tgz#687ba968e2c48abf686b899b063f396565d02a3a"
+  integrity sha512-IQVRrv3q6FV2+Z2HTs3vD5NExGKIMiT+esqjvj+2PUBtySb+D3ksEnsUE5Q6etCV7/OczcD7VQFXvLPnNCmchg==
 
 "@react-native-masked-view/masked-view@^0.2.6":
   version "0.2.6"
@@ -1284,14 +1284,6 @@
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.2.1.tgz#86f19781c6f34a5c9dd25dca99915e0306f477d1"
   integrity sha512-EnmAbKMsptrliRKf95rdgS6BhMjML+mIns06+G1Vdih6BrEo7/0iytThUv3WBf99AI76dyEq/cqLUwHPiFzXWg==
-
-"@react-navigation/material-top-tabs@^6.0.6":
-  version "6.0.6"
-  resolved "https://registry.yarnpkg.com/@react-navigation/material-top-tabs/-/material-top-tabs-6.0.6.tgz#efabd409e970c76cac4b9c61ac4d9bf735cf6d39"
-  integrity sha512-kbm/0jndRVeGdAgOd4NcDSdSQiYeA7fkctCKbPxe3mT36j9qOqpfHfmd2dbv/VbNCngdTtZ3/+QMxTIViZGy7g==
-  dependencies:
-    color "^3.1.3"
-    warn-once "^0.1.0"
 
 "@react-navigation/native-stack@^6.2.5":
   version "6.2.5"
